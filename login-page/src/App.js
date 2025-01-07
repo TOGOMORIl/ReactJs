@@ -1,11 +1,18 @@
-import React from 'react';
-import Login from './Login'; // Note: the path './Login' means that Login.js is in the same directory as App.js
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Home from "./Home"; // Import the new Home component
+import Login from "./Login";
+import Register from "./Register";
+
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} /> {/* Add route for Home */}
+      </Routes>
+    </Router>
   );
 }
 
